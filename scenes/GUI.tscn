@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "default"
+length = 0.4
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="power_left_text" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 487.0
+margin_right = 217.0
+margin_bottom = 556.0
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Energia Restante"
+
+[node name="power_left_num" type="RichTextLabel" parent="."]
+margin_left = 111.0
+margin_top = 491.0
+margin_right = 304.0
+margin_bottom = 553.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = SubResource( 2 )
+text = ":100%"
+scroll_active = false
+
+[node name="night_timer_text" type="RichTextLabel" parent="."]
+margin_left = 788.0
+margin_top = 18.0
+margin_right = 981.0
+margin_bottom = 80.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "00:00"
+scroll_active = false
+
+[node name="current_night_text" type="RichTextLabel" parent="."]
+margin_left = 796.0
+margin_top = 67.0
+margin_right = 1076.0
+margin_bottom = 129.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "Noite 1"
+scroll_active = false
+
+[node name="notification" type="RichTextLabel" parent="."]
+margin_left = 82.0
+margin_top = 355.0
+margin_right = 160.0
+margin_bottom = 493.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "!"
+scroll_active = false
+
+[node name="anim" type="AnimationPlayer" parent="notification"]
+autoplay = "default"
+anims/RESET = SubResource( 4 )
+anims/default = SubResource( 5 )

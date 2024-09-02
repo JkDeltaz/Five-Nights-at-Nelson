@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/test_sprites/open_cmsp_teste.png" type="Texture" id=1]
+[ext_resource path="res://scripts/open_cmsp.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "default"
+length = 0.4
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[node name="open_cmsp" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -832.0
+margin_bottom = -508.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+script = ExtResource( 2 )
+
+[node name="text" type="RichTextLabel" parent="."]
+margin_left = 56.0
+margin_top = -59.0
+margin_right = 134.0
+margin_bottom = 79.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "!"
+scroll_active = false
+
+[node name="anim" type="AnimationPlayer" parent="text"]
+autoplay = "default"
+anims/RESET = SubResource( 2 )
+anims/default = SubResource( 3 )
+
+[connection signal="pressed" from="." to="." method="_on_open_cmsp_pressed"]

@@ -1,0 +1,221 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scripts/music_handler.gd" type="Script" id=1]
+[ext_resource path="res://assets/sfx/Remastered Menu - Five Nights at Freddy's 2 OST.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/sfx/FNAF-2-Ambience-Extended-_TubeRipper.com_.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/Blip3.mp3" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/Put Down.mp3" type="AudioStream" id=5]
+[ext_resource path="res://assets/sfx/light_sound.mp3" type="AudioStream" id=6]
+[ext_resource path="res://assets/sfx/Windowscare.mp3" type="AudioStream" id=7]
+[ext_resource path="res://assets/sfx/door-slamming-fnaf-1-sound-effects.mp3" type="AudioStream" id=8]
+[ext_resource path="res://assets/sfx/khan-academy-sound-1.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/sfx/khan-academy-end-of-task.mp3" type="AudioStream" id=10]
+[ext_resource path="res://assets/sfx/wrong-answer-126515.mp3" type="AudioStream" id=11]
+[ext_resource path="res://assets/sfx/system-notification-199277.mp3" type="AudioStream" id=12]
+[ext_resource path="res://assets/sfx/fnaf-6-am-sound-made-with-Voicemod.mp3" type="AudioStream" id=13]
+[ext_resource path="res://assets/sfx/door_bang.mp3" type="AudioStream" id=14]
+[ext_resource path="res://assets/sfx/flashlight-clicking-on-105809.mp3" type="AudioStream" id=15]
+[ext_resource path="res://assets/sfx/fnaf-power-outage-but-shorter-made-with-Voicemod.mp3" type="AudioStream" id=16]
+[ext_resource path="res://assets/sfx/xc270097-pombo-domestico-_-pombo-das-rochas-columba-livia-domestica.mp3" type="AudioStream" id=17]
+[ext_resource path="res://assets/random_sfx/fnaf-freddys-laugh.mp3" type="AudioStream" id=18]
+[ext_resource path="res://assets/random_sfx/pigeons-flying-6351.mp3" type="AudioStream" id=19]
+[ext_resource path="res://assets/random_sfx/fnaf-running.mp3" type="AudioStream" id=20]
+[ext_resource path="res://assets/random_sfx/kitchen_6CSoXB5.mp3" type="AudioStream" id=21]
+[ext_resource path="res://assets/random_sfx/Mouse Squeaking - Sound Effect for editing (320).mp3" type="AudioStream" id=22]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -50.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -50.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fade_in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[node name="music_handler" type="Node"]
+script = ExtResource( 1 )
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -80.0
+autoplay = true
+
+[node name="anim" type="AnimationPlayer" parent="menu_music"]
+anims/RESET = SubResource( 1 )
+anims/fade_in = SubResource( 5 )
+anims/fade_out = SubResource( 2 )
+
+[node name="ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="anim" type="AnimationPlayer" parent="ambience"]
+anims/RESET = SubResource( 3 )
+anims/fade_in = SubResource( 4 )
+
+[node name="cam_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="open_cam" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="light_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="window_jumpscare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="door_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="right_answer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="last_answer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="wrong_answer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="notification" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = 2.0
+
+[node name="6am" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 3.0
+
+[node name="door_bang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="lantern_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="power_shutdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = 3.0
+
+[node name="pombo_scare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="rato_laugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = 2.0
+
+[node name="rato_squeak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = 3.0
+
+[node name="pombo_fly" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = 3.0
+
+[node name="kitchen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+
+[node name="running" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
