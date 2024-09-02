@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ascending-jumpscare-102061.mp3-50b5d9acc8ef76c1b2dc9f16e2e6f793.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/ascending-jumpscare-102061.mp3"
+dest_files=[ "res://.import/ascending-jumpscare-102061.mp3-50b5d9acc8ef76c1b2dc9f16e2e6f793.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
