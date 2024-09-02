@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/cam_sprites/cam_04.jpg" type="Texture" id=1]
+[ext_resource path="res://scenes/openCam.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/cam.tscn" type="PackedScene" id=3]
+[ext_resource path="res://misc/static_gif.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/rato/rato_03.webp" type="Texture" id=5]
+[ext_resource path="res://assets/pombo/pombo1.webp" type="Texture" id=6]
+
+[node name="cam_04" type="Node2D"]
+
+[node name="Cam04" type="Sprite" parent="."]
+position = Vector2( 480.75, 270 )
+scale = Vector2( 0.807822, 0.868167 )
+texture = ExtResource( 1 )
+
+[node name="rato_sprite" type="Sprite" parent="."]
+modulate = Color( 0.580392, 0.580392, 0.580392, 0.972549 )
+position = Vector2( 463, 416 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="pombo_sprite" type="Sprite" parent="."]
+modulate = Color( 0.505882, 0.505882, 0.505882, 0.941176 )
+position = Vector2( 13, 372 )
+rotation = 0.466003
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="static_gif" parent="." instance=ExtResource( 4 )]
+
+[node name="cam" parent="." instance=ExtResource( 3 )]
+
+[node name="openCam" parent="." instance=ExtResource( 2 )]
